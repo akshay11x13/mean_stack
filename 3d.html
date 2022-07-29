@@ -1,0 +1,39 @@
+<html>
+<title>
+tickets booking
+</title>
+<head>
+	<script>
+			var nseats=parseInt(window.prompt("Enter no of seats to book","0"));
+			const tp=150;
+			switch(nseats){
+				case 0:
+					window.alert("You have selected '0' seats ");
+					break;
+				case 1: 
+					document.write("Total price is "+tp+" rupees");
+					break;
+				case 2:
+					document.write("Total price is "+2*tp+" rupees");
+					break;
+				case 3: 
+					document.write("Total price is "+3*tp+" rupees\nTotal price after discount is "+discount(3,tp)+"rupees");
+					break;
+				case 4:
+					document.write("Total price is "+4*tp+" rupees\nTotal price after discount is "+discount(4,tp)+"rupees");
+					break;
+				case 5: 
+					document.write("Total price is "+5*tp+" rupees\nTotal price after discount is "+discount(5,tp)+"rupees");
+					break;
+				default:
+					window.alert("6 or more seats are not allowed to book\nor\n you have entered incorrect input");
+
+			}
+		function discount(a,b){
+			return a*b-((a*b*5)/100);
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>

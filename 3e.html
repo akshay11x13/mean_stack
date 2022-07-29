@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>
+        tickets booking
+    </title>
+</head>
+<body>
+    Enter no of seats <input type="text" id="nseats"/><br>
+    <input type="button" onclick="pricing()" value="get tickets"/>
+    <p id="r1"></p>
+    <p id="r2"></p>
+    <p id="r3"></p>
+    <p id="r4"></p>
+    <p id="r5"></p>
+    <p id="result"></p>
+    <script>
+        function pricing(){
+			var nseats=parseInt(document.getElementById("nseats").value);
+			const tp=150;
+            if(nseats>=6 || nseats<=0){
+                window.alert("Booking not possible");
+            }
+            else if(nseats<=2){
+                document.getElementById("result").innerHTML="For ticket, you need to pay "+nseats*tp+" rupees"+" for "+nseats+" customers";
+            }
+            else if(nseats>2 && nseats<6){
+                var i=0,d=5,pp,sum=0;
+                while(i<nseats){
+                    i++;
+                    pp=tp-((tp*d)/100);
+                    document.getElementById("r"+i).innerHTML="<tr><td>Ticket for Customer "+i+", gets "+d+"% discount.Price is "+pp+"</td></tr>";
+                    sum=sum+pp;
+                    d=d+2;
+                }
+                document.getElementById("result").innerHTML="For ticket, you need to pay "+sum+" rupees instead of "+nseats*tp;
+            }
+            else{
+                document.getElementById("result").innerHTML="Enter valid input";
+            }
+        }
+		function discount(a,b,d){
+			return a*b-((a*b*d)/100);
+		}
+	</script>
+</body>
+</html>
