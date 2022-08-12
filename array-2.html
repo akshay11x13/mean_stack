@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            ARRAYS-2
+        </title>
+    </head>
+<body>
+<p id="result"></p>
+<p id="r1"></p>
+<p id="r2"></p>
+<p id="result2"></p>
+Enter element to push:<input type="text" id="p"><input type="button" onclick="push()" value="Submit">
+<p id="result3">Elements after push will display here</p>
+<p id="r3"></p>
+<p id="result4"></p>
+Enter element to unshift:<input type="text" id="u"><input type="button" onclick="unshift()" value="Submit">
+<p id="result5">Elements after unshift will display here</p>
+<p id="r4"></p>
+<p id="r5"></p>
+<p id="r6"></p>
+<script>
+    const branches=["cse","ece","eee","mec","civil","csml"];
+    document.getElementById("result").innerHTML="branches array contains<br>"+branches;
+    document.getElementById("r1").innerHTML="array.join(-)<br>"+branches.join("-");
+    document.getElementById("r2").innerHTML="array.pop()<br>"+branches.pop();
+    document.getElementById("result2").innerHTML="After pop() branches array contains<br>"+branches;
+    function push(){
+        var p=document.getElementById("p").value;
+        branches.push(p);
+        document.getElementById("result3").innerHTML="After push() branches array contains<br>"+branches;
+        document.getElementById("r3").innerHTML="array.shift()<br>"+branches.shift();
+        document.getElementById("result4").innerHTML="After shift() branches array contains<br>"+branches;
+    }
+    function unshift(){
+        var u=document.getElementById("u").value;
+        branches.unshift(u);
+        document.getElementById("result5").innerHTML="After unshift() branches array contains<br>"+branches;
+        branches.sort();
+        document.getElementById("r6").innerHTML="After sort() branches array contains<br>"+branches;
+    }
+    const branches1=["cse","ece","eee"];
+    const branches2=["mec","civil","csml"];
+    document.getElementById("r4").innerHTML="branches1 array contains<br>"+branches1+"<br>branches2 array contains<br>"+branches2;
+    document.getElementById("r5").innerHTML="After concating branches1 and branches2<br>"+branches1.concat(branches2);
+</script>
+</body>
+</html>

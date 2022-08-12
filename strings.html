@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>
+            strings
+        </title>
+        <style>
+            h2,p{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Converting into lower and upper cases</h2>
+        <h2>Enter a string: <input type="text" id="s1"/></h2>
+        <p><input type="button" onclick="f1()" value="submit"/></p>
+        <p id="r1"></p>
+        <h2>Searching String-2 in String-1</h2>
+        <h2>Enter String-1:<input type="text" id="sm1"/></h2>
+        <h2>Enter String-2:<input type="text" id="sm2"/></h2>
+        <p><input type="button" onclick="f2()" value="submit"/></p>
+        <p id="r2"></p>
+    </body>
+    <script>
+        function f1(){
+            var s1=document.getElementById("s1").value;
+            document.getElementById("r1").innerHTML=s1+" in lowercase:"+s1.toLowerCase()+"<br>"+s1+" in uppercase:"+s1.toUpperCase();
+        }
+        function f2(){
+            var sm1=document.getElementById("sm1").value;
+            var sm2=document.getElementById("sm2").value;
+            var r=sm1.match(sm2);
+            if(r==sm2){
+                document.getElementById("r2").innerHTML="'"+sm1+"' contains '"+sm2+"' at letter:"+(r.index+1);
+            }else{
+                document.getElementById("r2").innerHTML="'"+sm1+"' don't contains '"+sm2+"'";
+            }
+        }
+    </script>
+</html>

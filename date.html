@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Date difference</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;"><b>To know the difference between two dates</b></h1>
+        <h2 style="text-align: center;">Enter FROM date:<input type="date" id="d1"/></h2>
+        <h2 style="text-align: center;">Enter TO date:<input type="date" id="d2"/></h2>
+        <p style="text-align: center;"><input type="button" onclick="result()" value="result"/></p>
+        <h1 style="text-align: center;"><b id="result"></b></h1>
+    </body>
+    <script>
+        function result(){
+            var do1= new Date(document.getElementById("d1").value);
+            var do2= new Date(document.getElementById("d2").value);
+            var mt=do2-do1;
+            var yd = (mt / 31536000000).toFixed(0);
+            var dd = mt / (1000 * 60 * 60 * 24);
+            var hd = mt /(1000*60*60);
+            var md = mt /(1000*60);
+            if(yd==0){
+                document.getElementById("result").innerHTML=dd+"days    "+hd+"hours     "+md+"minutes";
+            }else{
+                document.getElementById("result").innerHTML=yd+"years   "+dd+"days    "+hd+"hours     "+md+"minutes";
+            }
+        }
+    </script>
+</html>
