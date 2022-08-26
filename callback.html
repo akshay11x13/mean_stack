@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Callback</title>
+        <script>
+            var i=1;
+            function display(x){
+                if(i<=x){
+                    document.getElementById("dis").innerHTML=i;
+                    i=i+1;
+                }else if(i>x){
+                    document.getElementById("dis").innerHTML="Iteration completed";
+                }
+            }
+            function iter(x,callback){
+                setInterval(callback,1000,x);
+            }
+            function sub(){
+                let n=parseInt(document.getElementById("num").value);
+                iter(n,display);
+            }
+        </script>
+    </head>
+    <body>
+        <h2 style="text-align: center;">Enter a number:<input type="text" id="num"/></h2><br>
+        <p style="text-align: center;"><input type="button" value="Submit" onclick="sub()"/></p><br>
+        <p style="text-align: center;">Here Numbers from zero(0) to given number will display with interval of 1-sec</p>
+        <p id="dis" style="text-align: center;">None</p>
+    </body>
+</html>

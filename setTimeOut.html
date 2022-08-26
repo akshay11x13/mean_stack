@@ -1,0 +1,24 @@
+<html>
+    <head>
+    <title>Asynchronous Approach</title>
+    </head>
+    <body>
+        <p style="text-align: center;" id="f1p">Function-1 being Executed</p><br>
+        <p style="text-align: center;" id="f2p">Function-2 being Executed</p><br>
+        <p style="text-align: center;" id="f3p">Function-3 being Executed</p><br>
+        <script>
+            function f1(){
+                document.getElementById("f1p").innerHTML="Function-1 Executed";
+                setTimeout(f2,5000);
+            }
+            function f2(){
+                document.getElementById("f2p").innerHTML="Function-2 Executed after 5-sec";
+                setTimeout(f3,2000);
+            }
+            function f3(){
+                document.getElementById("f3p").innerHTML="Function-3 Executed after 2-sec";
+            }
+            f1();
+        </script>
+    </body>
+</html>

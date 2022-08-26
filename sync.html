@@ -1,0 +1,24 @@
+<html>
+    <head>
+    <title>Synchronous Approach</title>
+    </head>
+    <body>
+        <p style="text-align: center;" id="f1p"></p><br>
+        <p style="text-align: center;" id="f2p"></p><br>
+        <p style="text-align: center;" id="f3p"></p><br>
+        <script>
+            function f1(){
+                document.getElementById("f1p").innerHTML="Function-1 Executed";
+                f2();
+            }
+            function f2(){
+                document.getElementById("f2p").innerHTML="Function-2 Executed";
+                f3();
+            }
+            function f3(){
+                document.getElementById("f3p").innerHTML="Function-3 Executed";
+            }
+            f1();
+        </script>
+    </body>
+</html>

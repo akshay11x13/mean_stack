@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>setInterval</title>
+    </head>
+    <body>
+        <h2 style="text-align: center;">Now Time Is</h2><br>
+        <h2 style="text-align: center;"><b id="time"></b></h2><br>
+        <h2 style="text-align: center;">HH:MM:SS</h2>
+        <script>
+            setInterval(ftime,1000);
+            function ftime(){
+                let date=new Date();
+                document.getElementById("time").innerHTML=date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+            }
+        </script>
+    </body>
+</html>
